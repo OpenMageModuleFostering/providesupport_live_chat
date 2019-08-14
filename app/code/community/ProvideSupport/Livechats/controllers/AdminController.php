@@ -4,7 +4,7 @@ class ProvideSupport_livechats_AdminController extends Mage_Adminhtml_Controller
     public function settingsAction()
     {
         $this->loadLayout();
-        $this->getLayout()->getBlock('head')->addJs('provide/jquery.js');
+        $this->getLayout()->getBlock('head')->addJs('provide/jquery.min.js');
         $this->getLayout()->getBlock('head')->addJs('provide/jquery-noconflict.js');
         $this->getLayout()->getBlock('head')->addJs('provide/md5.js');
         $this->getLayout()->getBlock('head')->addJs('provide/provide.js');

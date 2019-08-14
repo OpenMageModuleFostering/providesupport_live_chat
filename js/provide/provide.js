@@ -245,8 +245,8 @@ f7Login = function () {
 			accountInfo += '<br /><br /><div id="f7newaccountDetails">To start using the live chat service and appear online please install the <a target="_blank" href = "http://www.providesupport.com/downloads/index.html?utm_source=magento-plugin&utm_medium=settings&utm_campaign=Plugins" style="text-decoration: none">Operator Console</a> ';
 			accountInfo += '<br />and login with the following credentials:';
 			accountInfo += '<br /><br />Account Name: <b>' + f7acc.name + '</b>';
-			accountInfo += '<br />Operator Login: <b>' + f7acc.name + '</b>';
-			accountInfo += '<br />Operator Password: <b>' + newPass + '</b>';
+			accountInfo += '<br />Operator Login: <b>operator1</b>';
+			accountInfo += '<br />Operator Password: <b>password1</b>';
 			accountInfo += '<br /><br />To customize your live chat appearance and configure other settings, <br />please use your account <a target="_blank" href = "https://admin.providesupport.com/action/main/company/company-login?login=' + f7acc.name + '&password=' + newPass + '" style="text-decoration: none">Control Panel</a>.';
 			accountInfo += '</div>';
 		}
@@ -647,7 +647,7 @@ ajaxSend = function(ajaxData, func){
                 //accSet.companyPassword = CryptoJS.MD5(f7acc.pass)+'';
                 accSet.companyPassword = f7acc.pass; 
                 accSet.email = f7acc.mail;
-                accSet.caller = 'magento-plugin-2.0.2';
+                accSet.caller = 'magento-plugin-2.0.3';
                 accSet.accountSettings = {
 											"chatIconOnline": "57/chat-icon-57-online-en.gif", 
 											"chatIconOffline": "57/chat-icon-57-offline-en.gif"

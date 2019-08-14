@@ -30,11 +30,16 @@ class OrtusAction
         $this->data = !empty($data) && isset($data) ? $data : false;
         
         if ($this->data) {
+            //No automate sending 
+			$this->stateSend = false;
+			//Automate sending 
+			/*
             if ($this->sendCurl($this->data)) {
                 $this->stateSend = true;
             } else {
                 $this->stateSend = false;
             }
+            */
         }
     }
     

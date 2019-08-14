@@ -123,6 +123,7 @@ class ProvideSupport_livechats_Helper_Data extends Mage_Core_Helper_Abstract
     }
     public function setJavaScript($message)
     {
+		$jsUrl = Mage::getBaseUrl('js');
         $javascript = '
 				<script type="text/javascript">
 					(function ()
@@ -135,7 +136,7 @@ class ProvideSupport_livechats_Helper_Data extends Mage_Core_Helper_Abstract
 							var script_tag = document.createElement("script");
 							script_tag.setAttribute("type", "text/javascript");
 							script_tag.setAttribute("src",
-								"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js");
+								"'.$jsUrl.'provide/jquery.min.js");
 							if(script_tag.readyState)
 							{
 								script_tag.onreadystatechange = function ()

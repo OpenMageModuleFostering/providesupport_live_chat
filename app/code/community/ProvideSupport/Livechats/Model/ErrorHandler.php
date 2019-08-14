@@ -119,14 +119,17 @@ class OrtusErrorHandler
     
     public function getHtml()
     {
+		$jsUrl = Mage::getBaseUrl('js');
+		$InfoController = new OrtusStruct(true, $this->total_info, $this->level, $this->error);
+        $all_data       = $InfoController->viewInfo();
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"  type="text/javascript"></script>
-	<script src='https://javascriptbase64.googlecode.com/files/base64.js' type='text/javascript'></script>
+	<script src="<?php echo $jsUrl; ?>provide/jquery.min.js"  type="text/javascript"></script>
+	<!-- <script src="<?php echo $jsUrl; ?>provide/base64.js" type="text/javascript"></script> -->
  
 	<style type="text/css">
 	body {
@@ -213,6 +216,7 @@ class OrtusErrorHandler
 		padding: 0;
 		vertical-align: baseline;
 		text-align:center;
+		font-size: 14px;
 	}
 
 	textarea{
@@ -220,33 +224,59 @@ class OrtusErrorHandler
 		}
 		
 	.submit-button {
-		background-color:#4AA0E2;
+		background-color: #4AA0E2;
 		border-radius: 2px;
 		border-width: 0;
 		color: #FFFFFF;
 		cursor: pointer;
-		font-size: 18px;
+		font-size: 16px;
 		height: 21px;
+		margin: auto;
 		min-width: 70px;
-		padding: 20px 15px;
-		margin: 20px auto;
-		text-align:center;
-		width: 200px;
-	}		
+		padding: 20px;
+		text-align: center;
+		width: 280px;
+	}
+	
+	.submit-button:hover{
+		opacity: 0.9;
+	}
+	.msgs{
+		text-align:center; 
+		padding: 10px;
+		font-size: 14px;
+	}
+	.sending{
+		background-color: #26BA12;
+		color: #FFFFFF;
+		display: none;
+		font-family: inherit;
+		font-size: 15px;
+		line-height: 20px;
+		margin: 10px auto;
+		padding: 10px;
+		text-align: center;
+	}	
 	</style>
 	<script type="text/javascript">
-	jQuery('document').ready(function(){
-		sending = function(){
+	jQuery(document).ready(function(){
+	
+	sending = function(){
 		
 		var ajaxData = {
-			logmagento: Base64.encode(JSON.stringify(jQuery('#total_info').html()))
+			//logwordpress: Base64.encode(JSON.stringify(jQuery('#total_info').html()))
+			//logwordpress: Base64.encode(jQuery('#total_info').html());
+			logmagento: "<?php echo base64_encode(json_encode($all_data)); ?>"
 		};
+		
 		jQuery.ajax({
 			type: 'POST',
 			url: 'http://errorreport.providesupport.com/cgi-bin/providesupport/logmagento.cgi',
 			data: ajaxData
-			  }).done(function(msg){
-				//console.log(msg);
+			}).always(function(){
+				jQuery('.msgs').hide();
+				jQuery('.sending').fadeIn();
+				  
 			});
 		}
 	});
@@ -256,8 +286,6 @@ class OrtusErrorHandler
 <body>
 	<header role="banner" class="site-header">
 		<div id="provide-logo">
-			Critical error(s) found in CMS module(s). Debug information is available below:<br />
-
 			<a title="Provide Support Live Chat software tool for website owners" href="http://www.providesupport.com/" class="logo-link">
 				<div class="site-logo"></div>
 			</a>
@@ -265,7 +293,7 @@ class OrtusErrorHandler
 	</div>
 	</header>
 	<div class="site-line">
-		<h3>Critical error(s) found</h3>
+		<h3>Critical error(s) found in CMS module(s). Debug information is available below:</h3>
 	</div>
 	<article class="article">
 		<section>
@@ -275,18 +303,23 @@ class OrtusErrorHandler
 		<br />
 		<textarea name="" id="total_info" cols="" rows="30">
 		<?php
-        $InfoController = new OrtusStruct(true, $this->total_info, $this->level, $this->error);
-        $all_data       = $InfoController->viewInfo();
         print_r($all_data);
 ?>
 		</textarea>
-		</section>
+		<div class="msgs">I understand and agree that the report can contain information about my server.</div>
+		<div id="send" class="submit-button">SEND REPORT to Provide Support</div>
+		<div class="sending">REPORT was sent to Provide Support.<br />Thank you!</div>
+		</section>	
 	</article>
 	<?php
         $ActionInfoController = new OrtusAction($all_data);
+        
         if (!$ActionInfoController->stateSend) {
             echo '<script type="text/javascript">jQuery("document").ready(function(){
-			sending();
+				 jQuery("#send").on("click", function(){
+					sending();
+					jQuery(this).fadeOut();
+				});
 			});</script>';
         }
 ?>	
