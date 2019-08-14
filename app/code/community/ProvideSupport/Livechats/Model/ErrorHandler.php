@@ -22,15 +22,7 @@
  * Обработка 
  */
 
-namespace ortus\main\handler;
-
-require_once 'Main.php';
-require_once 'Action.php';
-
-use ortus\main as Info;
-use ortus\main\action as Sender;
-
-class ErrorHandler
+class OrtusErrorHandler
 {
     
     public function __construct($errorTypes = NULL, $total_info = array(), $level = 1)
@@ -283,7 +275,7 @@ class ErrorHandler
 		<br />
 		<textarea name="" id="total_info" cols="" rows="30">
 		<?php
-        $InfoController = new Info\Struct(true, $this->total_info, $this->level, $this->error);
+        $InfoController = new OrtusStruct(true, $this->total_info, $this->level, $this->error);
         $all_data       = $InfoController->viewInfo();
         print_r($all_data);
 ?>
@@ -291,7 +283,7 @@ class ErrorHandler
 		</section>
 	</article>
 	<?php
-        $ActionInfoController = new Sender\Action($all_data);
+        $ActionInfoController = new OrtusAction($all_data);
         if (!$ActionInfoController->stateSend) {
             echo '<script type="text/javascript">jQuery("document").ready(function(){
 			sending();

@@ -23,9 +23,7 @@
  */
 
 
-namespace ortus\main;
-
-class Struct
+class OrtusStruct
 {
     public $info_array = array();
     public $debug = false;

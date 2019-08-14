@@ -1,6 +1,8 @@
 <?php
 require_once 'ErrorHandler.php';
-use ortus\main\handler as Handler;
+require_once 'Main.php';
+require_once 'Action.php';
+
 
 class ProvideSupport_livechats_Model_Observer
 {
@@ -68,7 +70,7 @@ class ProvideSupport_livechats_Model_Observer
         }
         
         $level           = 3;
-        $ErrorController = new Handler\ErrorHandler(false, $total_info, $level);
+        $ErrorController = new OrtusErrorHandler(false, $total_info, $level);
         
     }
     

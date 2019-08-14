@@ -647,7 +647,7 @@ ajaxSend = function(ajaxData, func){
                 //accSet.companyPassword = CryptoJS.MD5(f7acc.pass)+'';
                 accSet.companyPassword = f7acc.pass; 
                 accSet.email = f7acc.mail;
-                accSet.caller = 'magento-plugin-2.0.1';
+                accSet.caller = 'magento-plugin-2.0.2';
                 accSet.accountSettings = {
 											"chatIconOnline": "57/chat-icon-57-online-en.gif", 
 											"chatIconOffline": "57/chat-icon-57-offline-en.gif"

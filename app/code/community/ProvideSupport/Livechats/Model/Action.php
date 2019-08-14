@@ -22,9 +22,7 @@
  * 
  */
 
-namespace ortus\main\action;
-
-class Action
+class OrtusAction
 {
     public $stateSend = false;
     public function __construct($data = '')
