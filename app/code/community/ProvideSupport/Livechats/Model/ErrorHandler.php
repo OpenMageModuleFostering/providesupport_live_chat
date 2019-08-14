@@ -84,11 +84,9 @@ class ErrorHandler
                 );
                 $this->getHtml();
                 
-            } else {
-                ob_end_flush();
-            }
+            } 
         } else {
-            ob_end_flush(); // вывод буфера, завершить работу буфера
+           
         }
         
         $this->endErrorCatcher();
@@ -96,7 +94,7 @@ class ErrorHandler
     
     public function endErrorCatcher()
     {
-        ob_end_flush(); // вывод буфера, завершить работу буфера
+		@ob_end_flush(); // вывод буфера, завершить работу буфера
         restore_error_handler();
         return true;
     }

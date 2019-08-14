@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>ProvideSupport_Live_Chat</name>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <stability>stable</stability>
     <license uri="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</license>
     <channel>community</channel>
@@ -13,12 +13,12 @@ the appearance of the Live Chat on your website according to your&#xD;
 requirements.&#xD;
 </description>
     <notes>Release Info:&#xD;
-2.0.0&#xD;
+2.0.1&#xD;
 </notes>
     <authors><author><name>Provide Support, LLC</name><user>providesupport</user><email>magento@providesupport.com</email></author></authors>
-    <date>2014-02-17</date>
-    <time>16:48:37</time>
-    <contents><target name="magecommunity"><dir name="ProvideSupport"><dir name="Livechats"><dir name="Block"><file name="Help.php" hash="04b1789e11aa93bce631b1dc50e9cbd4"/><file name="Settings.php" hash="be3f3be8b3112eb9a7261593ec0127a3"/></dir><dir name="Helper"><file name="Data.php" hash="e8385d29b4cf64f6ef996eea8f2914a3"/></dir><dir name="Model"><file name="Action.php" hash="38d0662f4dc15a64f0f29944c28e924f"/><file name="ErrorHandler.php" hash="dcb815396090b1bf6f1858cb77692126"/><file name="Livechats.php" hash="e11381487405e4de8deac8c9f89d37d7"/><file name="Main.php" hash="028e281ee14df3e420e70afb0f58596c"/><dir name="Mysql4"><dir name="Livechats"><file name="Collection.php" hash="494c1641bf7b816d3499243c4105f2bc"/></dir><file name="Livechats.php" hash="072f5667c104375a95964987e22b3596"/></dir><file name="Observer.php" hash="64941b0accb438e4c5aab021cbc478eb"/></dir><dir name="controllers"><file name="AdminController.php" hash="b7ea1a7c689e0a0263ed2d50c0057b52"/></dir><dir name="etc"><file name="config.xml" hash="70fadcb777218899e49b8a63ea9a87de"/></dir><dir name="sql"><dir name="providelivechat_setup"><file name="install-1.0.0.php" hash="d94091d758a7ec7c765203caa77607b7"/><file name="upgrade-1.0.0-2.0.0.php" hash="50607727970ec8fc8aeef2b960ce17f4"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ProvideSupport_All.xml" hash="25a8d844fe6f5805e1280aa68d08154f"/></dir></target><target name="mageweb"><dir name="js"><dir name="provide"><file name="jquery-noconflict.js" hash="e2060c4e5e5955c824723b13a212d3ec"/><file name="jquery.js" hash="41ca0b5d474117281973aeb249b944c8"/><file name="md5.js" hash="76b55cb1f28848b833083b2f19e6e088"/><file name="provide.js" hash="19999745864cf1d224dde043a7187049"/></dir></dir></target></contents>
+    <date>2014-02-24</date>
+    <time>09:24:41</time>
+    <contents><target name="magecommunity"><dir name="ProvideSupport"><dir name="Livechats"><dir name="Block"><file name="Help.php" hash="04b1789e11aa93bce631b1dc50e9cbd4"/><file name="Settings.php" hash="be3f3be8b3112eb9a7261593ec0127a3"/></dir><dir name="Helper"><file name="Data.php" hash="e8385d29b4cf64f6ef996eea8f2914a3"/></dir><dir name="Model"><file name="Action.php" hash="38d0662f4dc15a64f0f29944c28e924f"/><file name="ErrorHandler.php" hash="4f00a51e25501064506081e7b1ca3021"/><file name="Livechats.php" hash="e11381487405e4de8deac8c9f89d37d7"/><file name="Main.php" hash="028e281ee14df3e420e70afb0f58596c"/><dir name="Mysql4"><dir name="Livechats"><file name="Collection.php" hash="494c1641bf7b816d3499243c4105f2bc"/></dir><file name="Livechats.php" hash="072f5667c104375a95964987e22b3596"/></dir><file name="Observer.php" hash="10d799125a33026981d1902416c378e0"/></dir><dir name="controllers"><file name="AdminController.php" hash="b7ea1a7c689e0a0263ed2d50c0057b52"/></dir><dir name="etc"><file name="config.xml" hash="c5e3eae1d816225bd549a472ceb4b919"/></dir><dir name="sql"><dir name="providelivechat_setup"><file name="install-1.0.0.php" hash="d94091d758a7ec7c765203caa77607b7"/><file name="upgrade-1.0.0-2.0.1.php" hash="50607727970ec8fc8aeef2b960ce17f4"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ProvideSupport_All.xml" hash="25a8d844fe6f5805e1280aa68d08154f"/></dir></target><target name="mageweb"><dir name="js"><dir name="provide"><file name="jquery-noconflict.js" hash="e2060c4e5e5955c824723b13a212d3ec"/><file name="jquery.js" hash="41ca0b5d474117281973aeb249b944c8"/><file name="md5.js" hash="76b55cb1f28848b833083b2f19e6e088"/><file name="provide.js" hash="974fbcd8275515c659105449fb9fb82b"/></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>5.7.0</max></php></required></dependencies>
 </package>

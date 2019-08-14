@@ -6,6 +6,7 @@ class ProvideSupport_livechats_Model_Observer
 {
     
     public $countPastCode;
+    public $countFixedCode;
     
     public function startCmsHadler()
     {
@@ -84,15 +85,24 @@ class ProvideSupport_livechats_Model_Observer
         $this->helper   = Mage::helper('livechats/data');
         $this->helper->initCodePS($this->view);
         
+        
+      
+        
         //Fatal error testing 
         //require('null');
         
     }
     public function insertBlock($observer)
     {
+		
+		if ( !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' ) {
+			/* Если пришел Ajax то пропускаем, вновь не отработал код */
+		}else{ 
+        
         if (Mage::app()->getLayout()->getArea() == 'frontend') {
             $_name = $observer->getBlock()->getNameInLayout();
             $_type = $observer->getBlock()->getType();
+        
             if (isset($this->settings->pluginEnabled) && $this->settings->pluginEnabled) {
                 if ($this->pos == 'fixed') {
                     if ($_name == 'root') {
@@ -111,6 +121,7 @@ class ProvideSupport_livechats_Model_Observer
                 }
             }
         }
+	}
     }
     protected function handler()
     {
@@ -120,7 +131,8 @@ class ProvideSupport_livechats_Model_Observer
         } elseif ($this->settings->buttonAvailableAll == false && $this->settings->buttonAvailablePost == false && $this->settings->buttonAvailableWhole) {
             //Only display the hidden code
             if ($this->pos === 'fixed') {
-                $this->helper->showModuleJsHiddenCode();
+				$this->helper->showModuleJsHiddenCode();
+                
             } else {
                 $this->helper->showModuleHiddenCode();
                 $this->countPastCode = true;
