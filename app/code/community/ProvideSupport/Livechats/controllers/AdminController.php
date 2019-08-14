@@ -1,5 +1,5 @@
 <?php
-class ProvideSupport_Livechat_AdminController extends Mage_Adminhtml_Controller_Action
+class ProvideSupport_livechats_AdminController extends Mage_Adminhtml_Controller_Action
 {
     public function settingsAction()
     {
@@ -8,19 +8,19 @@ class ProvideSupport_Livechat_AdminController extends Mage_Adminhtml_Controller_
         $this->getLayout()->getBlock('head')->addJs('provide/jquery-noconflict.js');
         $this->getLayout()->getBlock('head')->addJs('provide/md5.js');
         $this->getLayout()->getBlock('head')->addJs('provide/provide.js');
-        $this->_addContent($this->getLayout()->createBlock('livechat/settings'))->_setActiveMenu('livechat');
+        $this->_addContent($this->getLayout()->createBlock('livechats/settings'))->_setActiveMenu('livechats');
         $this->renderLayout();
     }
     public function helpAction()
     {
         $this->loadLayout();
-        $this->_addContent($this->getLayout()->createBlock('livechat/help'))->_setActiveMenu('livechat');
+        $this->_addContent($this->getLayout()->createBlock('livechats/help'))->_setActiveMenu('livechats');
         $this->renderLayout();
     }
     public function ajaxAction()
     {
         $dbction = $this->getRequest()->getParam('action');
-        $db      = Mage::getModel('livechat/livechat')->load(1);
+        $db      = Mage::getModel('livechats/livechats')->load(1);
         if (!empty($dbction)) {
             switch ($dbction) {
                 case 'getaccount':

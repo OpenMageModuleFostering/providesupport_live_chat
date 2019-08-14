@@ -1,5 +1,5 @@
 <?php
-class ProvideSupport_Livechat_Block_Help extends Mage_Core_Block_Template
+class ProvideSupport_livechats_Block_Help extends Mage_Core_Block_Template
 {
 	protected function _toHtml()
 	{

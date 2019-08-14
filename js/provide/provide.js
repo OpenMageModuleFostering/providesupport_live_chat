@@ -1,7 +1,7 @@
 /*
  * Developed by Ortus IT.
  * Web: http://ortus-it.com
- * Code part:#02-01-rev.004, October 2013. 
+ * Code part:#02-02-rev.004, October 2013. 
  * -All Rights of this product are belong to Provide Support, LLC.-
  * 
  */
@@ -647,7 +647,7 @@ ajaxSend = function(ajaxData, func){
                 //accSet.companyPassword = CryptoJS.MD5(f7acc.pass)+'';
                 accSet.companyPassword = f7acc.pass; 
                 accSet.email = f7acc.mail;
-                accSet.caller = 'magento-plugin-1.0';
+                accSet.caller = 'magento-plugin-2.0';
                 accSet.accountSettings = {
 											"chatIconOnline": "57/chat-icon-57-online-en.gif", 
 											"chatIconOffline": "57/chat-icon-57-offline-en.gif"
@@ -735,8 +735,8 @@ ajaxSend = function(ajaxData, func){
                 }
 			};
             
-            console.log('json.fixed = '+json.fixed);
-            console.log('json.fixedPosition : '+json.fixedPosition);
+            //console.log('json.fixed = '+json.fixed);
+            //console.log('json.fixedPosition : '+json.fixedPosition);
             
             
             
@@ -883,7 +883,7 @@ ajaxSend = function(ajaxData, func){
             async: false,
             success: function (msg) {
 				
-				console.log(msg);
+				//console.log(msg);
                 setCode(msg.code, format);
             }
         });
@@ -901,7 +901,7 @@ ajaxSend = function(ajaxData, func){
             async: false,
             success: function (msg) {
 				
-				console.log(msg);
+				//console.log(msg);
                 
                 if (!format) {
                     jQuery('#f7livePreview').html('Your live chat link example: <br />' + msg.code);

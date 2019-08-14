@@ -1,5 +1,5 @@
 <?php
-class ProvideSupport_Livechat_Block_Settings extends Mage_Core_Block_Template
+class ProvideSupport_livechats_Block_Settings extends Mage_Core_Block_Template
 {
     private function addProvideCss()
     {
@@ -237,7 +237,7 @@ background: none repeat scroll 0 0 #FAFAFA;
     }
     protected function _toHtml()
     {
-        $html = '<script>var urlAjax = "' . Mage::getUrl('') . 'livechat/admin/ajax/?isAjax=true";</script>';
+        $html = '<script>var urlAjax = "' . Mage::getUrl('') . 'livechats/admin/ajax/?isAjax=true";</script>';
         $html .= $this->addProvideCss() . ' <div id="f7main">';
         $html .= '<div id="f7title">';
         $html .= 'Welcome to Provide Support Live Chat module settings page.<br/>Visit our website <a href="http://www.providesupport.com" target="_blank">www.providesupport.com</a> to find more information about our Live Chat system.';
@@ -440,6 +440,7 @@ background: none repeat scroll 0 0 #FAFAFA;
         preg_match_all('/<option value="([^"]*)" >([^>]*)<\/option>/', $option, $option_value);
         $count = count($option_value[1]);
         if ($count > 0) {
+			$div_menu = '';
             for ($i = 1; $i < $count; $i++) {
                 $div_menu .= '<option value="' . $option_value[1][$i] . '">' . $option_value[2][$i] . '</option>';
             }

@@ -1,12 +1,12 @@
 <?php
-class ProvideSupport_Livechat_Helper_Data extends Mage_Core_Helper_Abstract
+class ProvideSupport_livechats_Helper_Data extends Mage_Core_Helper_Abstract
 {
     public function initJs()
     {
         $this->page      = Mage::getSingleton('cms/page');
         $this->list_page = Zend_Json::decode($this->settings, Zend_Json::TYPE_OBJECT);
     }
-    public function initCode($view)
+    public function initCodePS($view)
     {
         $this->settings   = $view->settings;
         $this->code       = $view->code;
