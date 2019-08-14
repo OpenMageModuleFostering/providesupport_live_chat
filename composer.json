@@ -1,0 +1,17 @@
+{
+    "name": "OpenMageModuleFostering/ProvideSupport_Live_Chat",
+    "type": "magento-module",
+    "license": "GNU-General-Public-License",
+    "homepage": "",
+    "description": "Live Chat module for Magento by Provide Support, LLC
+",
+    "authors": [
+    {
+        "name": "Provide Support, LLC",
+        "email": "magento@providesupport.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

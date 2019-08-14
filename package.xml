@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+    <name>ProvideSupport_Live_Chat</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Live Chat module for Magento by Provide Support, LLC&#xD;
+</summary>
+    <description>The module helps to integrate Provide Support Live Chat&#xD;
+with Magento based websites. It offers flexible settings to customize&#xD;
+the appearance of the Live Chat on your website according to your&#xD;
+requirements.</description>
+    <notes>First public release&#xD;
+</notes>
+    <authors><author><name>Provide Support, LLC</name><user>providesupport</user><email>magento@providesupport.com</email></author></authors>
+    <date>2013-11-13</date>
+    <time>12:06:28</time>
+    <contents><target name="magecommunity"><dir name="ProvideSupport"><dir name="Livechat"><dir name="Block"><file name="Help.php" hash="06a993b6ed92dc5a7c22445f65b72cd5"/><file name="Settings.php" hash="a900da0bd0bafc0b479d0aa0aaa4adaa"/></dir><dir name="Helper"><file name="Data.php" hash="306a5efc9bf9eae926c6ca693eca0367"/></dir><dir name="Model"><file name="Livechat.php" hash="668d641a7309fc7efc8d754f062c537b"/><dir name="Mysql4"><dir name="Livechat"><file name="Collection.php" hash="0a08b2c0c0c81f0afbbae08ea7b1095b"/></dir><file name="Livechat.php" hash="5cd46359fdf549c69dbf6cedd370a9a3"/></dir><file name="Observer.php" hash="b649cb16d354f61ccc4024f58dcc8a4f"/></dir><dir name="controllers"><file name="AdminController.php" hash="d60456baf0aee0c0c4d57181e3087f5f"/></dir><dir name="etc"><file name="config.xml" hash="b4af121d684f132f38a4817beb5ea603"/></dir><dir name="sql"><dir name="providelivechat_setup"><file name="mysql4-install-1.0.0.php" hash="b5bbd6a1e88814e3fca9112a1a55dab6"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ProvideSupport_All.xml" hash="942a89517a99d55e014eba20bf6e27b9"/></dir></target><target name="mageweb"><dir name="js"><dir name="provide"><file name="jquery-noconflict.js" hash="e2060c4e5e5955c824723b13a212d3ec"/><file name="jquery.js" hash="41ca0b5d474117281973aeb249b944c8"/><file name="md5.js" hash="76b55cb1f28848b833083b2f19e6e088"/><file name="provide.js" hash="58d3c27112e65fff7265f61bf57eecb5"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>5.7.0</max></php></required></dependencies>
+</package>
