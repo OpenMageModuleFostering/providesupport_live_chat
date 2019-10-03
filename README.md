@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Live Chat module for Magento by Provide Support, LLC
